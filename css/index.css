@@ -1,28 +1,68 @@
 @import "./global.css";
 
+.container {
+  padding: 0 20px;
+  margin: auto;
+  width: 100%;
+}
+
+body {
+  background-color: #cadde1;
+  font-family: "Barlow Semi Condensed";
+}
+
 .first-section-active {
+  margin-top: 100px;
   display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(1fr);
+  gap: 30px;
   grid-template-areas:
     "st st nd rd"
     "th fv fv rd";
 }
 
 .first-section-active-box {
-  border: 0.3rem solid;
+  border-radius: 10px;
   flex-grow: 1;
   padding: 26px 32px 32px 32px;
   color: #fff;
 }
 
+.first-section-active-box h2 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+
+.first-section-active-box p {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.box-verification {
+  display: flex;
+  align-items: center;
+  column-gap: 17px;
+  margin-bottom: 18px;
+}
+
+.box-verification img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
 .first-section-active-box:nth-child(1) {
   grid-area: st;
   background-color: #733fc8;
+  height: 282px;
 }
 
 .first-section-active-box:nth-child(2) {
   grid-area: nd;
+  height: 282px;
+  width: 255px;
   background-color: #48556a;
 }
 
@@ -30,15 +70,52 @@
   background-color: #fff;
   grid-area: rd;
   color: #48556a;
+  width: 255px;
 }
 
 .first-section-active-box:nth-child(4) {
   background-color: #fff;
   grid-area: th;
+  width: 255px;
+  height: 266px;
   color: #48556a;
 }
 
 .first-section-active-box:nth-child(5) {
   background-color: #19202d;
+  height: 266px;
   grid-area: fv;
+}
+
+@media screen and (max-width: 327px) {
+  .first-section-active {
+    display: grid;
+    row-gap: 24px;
+    grid-template-areas:
+      "st"
+      "nd"
+      "th"
+      "fv"
+      "rd";
+  }
+
+  .first-section-active-box:nth-child(1) {
+    height: 524px;
+  }
+
+  .first-section-active-box:nth-child(2) {
+    height: 280px;
+  }
+
+  .first-section-active-box:nth-child(3) {
+    width: 255px;
+  }
+
+  .first-section-active-box:nth-child(4) {
+    height: 266px;
+  }
+
+  .first-section-active-box:nth-child(5) {
+    height: 490px;
+  }
 }
